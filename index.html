@@ -14,7 +14,9 @@
     <!-- 默认主题 -->
     <link rel="stylesheet" href="//cdn.yct.ee/npm/docsify/lib/themes/vue.css">
     <link rel="stylesheet" href="./css/my.css">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="//cdn.yct.ee/npm/gitalk/dist/gitalk.css">
 </head>
 
 <body>
@@ -46,7 +48,7 @@
             search: {
                 maxAge: 86400000,// 过期时间，单位毫秒，默认一天
                 paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
-                placeholder: '搜索',              
+                placeholder: '搜索',
                 // 支持本地化
                 placeholder: {
                     '/': '搜索'
@@ -55,7 +57,16 @@
                 depth: 4,
                 hideOtherSidebarContent: false,
                 namespace: '漫步周刊',
-            }
+            },
+            pagination: {
+                previousText: '上一期',
+                // or
+                nextText: {
+                    '/': '下一期'
+                },
+                crossChapter: true,
+                crossChapterText: true,
+            },
         }
     </script>
     <!-- docsify的js依赖 -->
@@ -70,6 +81,20 @@
     <script src="//cdn.yct.ee/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <!-- 盘古之白 -->
     <script src="//cdn.yct.ee/npm/docsify-pangu/lib/pangu.min.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.yct.ee/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.yct.ee/npm/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        const gitalk = new Gitalk({
+          clientID: 'd8389ea4c44506b5877b',
+          clientSecret: '3335e985d3a08ff5357194b9c90b6b08d9ed40b5',
+          repo: 'Weekly_gitalk',
+          owner: 'BarryYangi',
+          admin: ['BarryYangi'],
+          // facebook-like distraction free mode
+          distractionFreeMode: false
+        })
+      </script>
 </body>
 
 </html>
